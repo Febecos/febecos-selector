@@ -641,14 +641,16 @@ function irAAcciones(){
     'Fecha: '+new Date().toLocaleString('es-AR'),
   ].join('\n');
 
-  // Abrir cliente de email en background (silencioso en mobile, abre en desktop)
+  // Enviar email interno via API (silencioso, sin popup)
   try{
-    const link=document.createElement('a');
-    link.href='mailto:'+EMAIL_TO+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
-    link.style.display='none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    fetch('/api/email',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({...D})
+    }).then(r=>r.json()).then(d=>{
+      if(d.ok) console.log('[email enviado OK]');
+      else console.warn('[email error]',d.error);
+    }).catch(e=>console.warn('[email error]',e));
   }catch(e){}
 
   // Guardar en Supabase directamente
