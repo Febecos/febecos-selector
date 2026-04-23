@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/formulario.html',
+        permanent: false,
+      },
+    ]
+  },
   async headers() {
     return [
       {
