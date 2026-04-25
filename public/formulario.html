@@ -80,12 +80,17 @@ h1 .v{color:var(--verde)}
 .fi,.fs{width:100%;padding:11px 14px;font-family:'Rubik',sans-serif;font-size:14px;color:var(--azul-txt);background:var(--gris-bg);border:1.5px solid var(--gris-b);border-radius:7px;outline:none;transition:all .15s}
 .fi:focus,.fs:focus{border-color:var(--azul);background:#fff;box-shadow:0 0 0 2px rgba(0,61,114,.15)}
 .fi::placeholder{color:#b0bec5;font-weight:300}
-.fi.error{border-color:var(--rojo);background:#fff5f7}
-.fi.valido{border-color:#25d366;background:#f0fff5}
+.fi.error{border-color:var(--rojo)}
+.fi.valido{border-color:#25d366}
 .fs{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%235a6a7a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:38px}
-.field-msg{font-size:11px;margin-top:5px;display:none}
+.field-msg{font-size:11px;margin-top:4px;display:none}
 .field-msg.err{color:var(--rojo);display:block}
 .field-msg.ok{color:#1a6b35;display:block}
+
+/* INPUT NUMÉRICO CON UNIDAD */
+.input-unit{position:relative}
+.input-unit .fi{padding-right:50px}
+.unit-label{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--gris);font-weight:500;pointer-events:none}
 
 /* BOTONES */
 .btn{width:100%;padding:13px 22px;background:var(--azul);color:#fff;font-family:'Rubik',sans-serif;font-size:15px;font-weight:600;border:none;border-radius:8px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
@@ -97,23 +102,31 @@ h1 .v{color:var(--verde)}
 .btn-back:hover{border-color:var(--azul);color:var(--azul)}
 .btn-wa{width:100%;padding:14px 22px;background:#25d366;color:#fff;font-family:'Rubik',sans-serif;font-size:15px;font-weight:700;border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;transition:all .15s}
 .btn-wa:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 5px 18px rgba(37,211,102,.3)}
-.btn-cotizar{width:100%;padding:13px 22px;background:var(--acento);color:var(--azul-txt);font-family:'Rubik',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .15s}
-.btn-cotizar:hover{background:var(--acento-bord);transform:translateY(-1px);box-shadow:0 4px 14px rgba(168,198,27,.35)}
+.btn-roi{width:100%;padding:13px 22px;background:var(--acento);color:var(--azul-txt);font-family:'Rubik',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .15s;text-decoration:none}
+.btn-roi:hover{background:var(--acento-bord);transform:translateY(-1px);box-shadow:0 4px 14px rgba(168,198,27,.35)}
 .btn-rst{margin-top:10px;background:none;border:1px solid var(--gris-b);border-radius:7px;padding:9px;width:100%;font-family:'Rubik',sans-serif;font-size:12px;color:var(--gris);cursor:pointer;transition:all .15s}
 .btn-rst:hover{border-color:var(--azul);color:var(--azul)}
-.btn-editar{display:inline-flex;align-items:center;gap:5px;background:none;border:none;color:var(--azul);font-family:'Rubik',sans-serif;font-size:12px;font-weight:600;cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:2px}
 
 /* ALERTAS */
 .alert{background:var(--naranja-bg);border-left:4px solid var(--naranja);border-radius:0 7px 7px 0;padding:13px 16px;margin-top:14px;font-size:13px;color:#5a3a00;line-height:1.6;display:none}
 .alert.on{display:block;animation:fu .2s ease both}
-.banner{display:none;align-items:center;gap:9px;background:var(--gris-bg);border:1px solid var(--gris-b);border-radius:7px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--azul)}
-.banner.on{display:flex;animation:fu .2s ease both}
-.banner strong{font-weight:700}
 
 /* STEPS */
 .step{display:none}.step.active{display:block}.hidden{display:none!important}
 
-/* RESUMEN DE DATOS */
+/* CARD BOMBA SUGERIDA */
+.bomba-card{background:linear-gradient(135deg,#003d72 0%,#224a73 100%);border-radius:12px;padding:24px;margin-bottom:16px;color:#fff}
+.bomba-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(168,198,27,.25);border:1px solid var(--acento);color:var(--acento);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
+.bomba-codigo{font-size:13px;color:rgba(255,255,255,.6);font-family:monospace;margin-bottom:4px}
+.bomba-nombre{font-size:20px;font-weight:800;color:#fff;margin-bottom:4px}
+.bomba-specs{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:16px}
+.bomba-precio{font-size:28px;font-weight:800;color:var(--acento);margin-bottom:16px}
+.bomba-precio span{font-size:13px;font-weight:400;color:rgba(255,255,255,.5);margin-left:4px}
+.bomba-checks{display:flex;flex-direction:column;gap:7px;margin-bottom:0}
+.bomba-check{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.9)}
+.bomba-check::before{content:'✓';color:var(--acento);font-weight:700;flex-shrink:0}
+
+/* RESUMEN */
 .resumen-list{list-style:none;display:flex;flex-direction:column;gap:0}
 .resumen-item{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--gris-b);gap:12px}
 .resumen-item:last-child{border-bottom:none}
@@ -121,20 +134,24 @@ h1 .v{color:var(--verde)}
 .ri-num{width:22px;height:22px;border-radius:50%;background:var(--azul);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ri-content{flex:1;min-width:0}
 .ri-label{font-size:11px;color:var(--gris);font-weight:500;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:2px}
-.ri-valor{font-size:14px;font-weight:600;color:var(--azul-txt);display:block;word-break:break-word}
-.ri-edit{flex-shrink:0}
+.ri-valor{font-size:14px;font-weight:600;color:var(--azul-txt);display:block}
+.btn-editar{display:inline-flex;align-items:center;gap:5px;background:none;border:none;color:var(--azul);font-family:'Rubik',sans-serif;font-size:12px;font-weight:600;cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:2px;flex-shrink:0}
 
-/* PANTALLA FINAL */
-.final-wrap{padding:22px 20px 18px}
-.final-titulo{font-size:19px;font-weight:800;color:var(--azul-txt);margin-bottom:5px}
-.final-sub{font-size:13px;color:var(--gris);line-height:1.55;margin-bottom:18px}
-.divider{text-align:center;font-size:12px;color:var(--gris);margin:14px 0;display:flex;align-items:center;gap:8px}
-.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--gris-b)}
+/* SPINNER */
+.spinner-wrap{text-align:center;padding:40px 20px}
+.spinner{width:36px;height:36px;border:3px solid var(--gris-b);border-top-color:var(--azul);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner-wrap p{font-size:14px;color:var(--gris)}
+
+/* SIN RESULTADO */
+.no-result{background:var(--naranja-bg);border:1.5px solid var(--naranja);border-radius:10px;padding:20px;text-align:center}
+.no-result p{font-size:14px;color:#5a3a00;line-height:1.6}
+
 .ssl-note{text-align:center;font-size:10px;color:#b0bec5;letter-spacing:.08em;text-transform:uppercase;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
 .ssl-note::before,.ssl-note::after{content:'';height:1px;width:28px;background:var(--gris-b)}
-
-/* WA SVG reutilizable */
-.wa-ico{display:inline-block;flex-shrink:0}
+.final-wrap{padding:22px 20px 18px}
+.divider{text-align:center;font-size:12px;color:var(--gris);margin:14px 0;display:flex;align-items:center;gap:8px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--gris-b)}
 </style>
 </head>
 <body>
@@ -144,156 +161,180 @@ h1 .v{color:var(--verde)}
 <div style="margin-bottom:32px">
   <div class="badge"><span class="badge-dot"></span>Ingeniería aplicada al campo</div>
   <h1>Tu sistema de bombeo<br><span class="v">diseñado por<br>expertos.</span></h1>
-  <p class="intro">No compres un kit a ciegas. Completá el formulario de ingeniería para que nuestro equipo técnico dimensione el equipo exacto que tu pozo requiere.</p>
+  <p class="intro">No compres un kit a ciegas. Completá el formulario y te mostramos el equipo exacto para tu campo — con precio y retorno de inversión.</p>
   <div class="checks">
-    <div class="chrow"><div class="chico"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong>Dimensionamiento Preciso</strong> <span>Basado en profundidad real y caudal necesario.</span></div></div>
-    <div class="chrow"><div class="chico"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong>Respuesta en 24hs</strong> <span>Recibí tu presupuesto formal tras el análisis.</span></div></div>
+    <div class="chrow"><div class="chico"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong>Selección automática</strong> <span>Cruzamos tus datos con el catálogo en tiempo real.</span></div></div>
+    <div class="chrow"><div class="chico"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong>Precio exacto</strong> <span>Kit completo con paneles incluidos.</span></div></div>
+    <div class="chrow"><div class="chico"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong>Retorno de inversión</strong> <span>Calculamos en cuánto tiempo se paga solo.</span></div></div>
   </div>
-  <div class="aviso"><strong>Importante:</strong> Los datos del formulario nos permiten calcular la potencia de paneles y el modelo de bomba exacto para evitar que el sistema falle.</div>
+  <div class="aviso"><strong>Importante:</strong> Con los datos exactos del pozo calculamos la bomba precisa. Evitamos sobredimensionar o subdimensionar el sistema.</div>
 </div>
 
 <!-- PROGRESS -->
 <div class="prog-wrap">
-  <div class="prog-top"><span class="prog-lbl" id="prog-lbl">Paso 1 de 10</span><span class="prog-pct" id="prog-pct">10%</span></div>
-  <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:10%"></div></div>
+  <div class="prog-top"><span class="prog-lbl" id="prog-lbl">Paso 1 de 9</span><span class="prog-pct" id="prog-pct">11%</span></div>
+  <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:11%"></div></div>
 </div>
 
-<!-- ═══ S1 ZONA ═══ -->
+<!-- S1 ZONA -->
 <div class="step active" id="step-1">
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Datos de tu campo</p></div>
   <div class="fcb">
     <label class="ql">¿En qué zona está tu campo?</label>
-    <input type="text" class="fi" id="zona" placeholder="Ej: Buenos Aires, Córdoba, Salta..." autocomplete="off"
-      oninput="valText('zona','b1',2)"
+    <input type="text" class="fi" id="zona" placeholder="Ej: San Luis, Córdoba, Buenos Aires..." autocomplete="off"
+      oninput="document.getElementById('b1').disabled=this.value.trim().length<2"
       onkeydown="if(event.key==='Enter')clickBtn('b1')">
   </div></div>
   <button class="btn" id="b1" onclick="nx(1)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S2 USO ═══ -->
+<!-- S2 USO -->
 <div class="step" id="step-2">
   <button class="btn-back" onclick="bk(2)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Datos de tu campo</p></div>
   <div class="fcb">
     <label class="ql">¿Para qué necesitás el agua?</label>
     <div class="opts row">
-      <label class="opt il" style="flex:1;min-width:100px"><input type="radio" name="uso" value="Ganado" onchange="document.getElementById('b2').disabled=false"><div class="ob"><span class="oe">🐄</span><span class="on">Ganado</span></div></label>
-      <label class="opt il" style="flex:1;min-width:100px"><input type="radio" name="uso" value="Riego" onchange="document.getElementById('b2').disabled=false"><div class="ob"><span class="oe">🌱</span><span class="on">Riego</span></div></label>
-      <label class="opt il" style="flex:1;min-width:100px"><input type="radio" name="uso" value="Mixto" onchange="document.getElementById('b2').disabled=false"><div class="ob"><span class="oe">🏡</span><span class="on">Mixto</span></div></label>
+      <label class="opt il" style="flex:1;min-width:100px"><input type="radio" name="uso" value="Ganado" onchange="onUso()"><div class="ob"><span class="oe">🐄</span><span class="on">Ganado</span></div></label>
+      <label class="opt il" style="flex:1;min-width:100px"><input type="radio" name="uso" value="Riego" onchange="onUso()"><div class="ob"><span class="oe">🌱</span><span class="on">Riego</span></div></label>
+      <label class="opt il" style="flex:1;min-width:100px"><input type="radio" name="uso" value="Mixto" onchange="onUso()"><div class="ob"><span class="oe">🏡</span><span class="on">Mixto</span></div></label>
     </div>
   </div></div>
   <button class="btn" id="b2" onclick="nx(2)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S3 CÓMO RESOLVÉS ═══ -->
+<!-- S3 AGUA HOY -->
 <div class="step" id="step-3">
   <button class="btn-back" onclick="bk(3)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Datos de tu campo</p></div>
   <div class="fcb">
     <label class="ql">¿Cómo resolvés el agua hoy?</label>
     <div class="opts g2">
-      <label class="opt"><input type="radio" name="agua_hoy" value="Molino" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">💨</span><div class="ot"><span class="on">Molino</span></div></div></label>
-      <label class="opt"><input type="radio" name="agua_hoy" value="Gasoil" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">⛽</span><div class="ot"><span class="on">Gasoil</span></div></div></label>
-      <label class="opt"><input type="radio" name="agua_hoy" value="Electricidad" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">⚡</span><div class="ot"><span class="on">Electricidad</span></div></div></label>
-      <label class="opt"><input type="radio" name="agua_hoy" value="No tengo nada" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">❌</span><div class="ot"><span class="on">No tengo nada</span></div></div></label>
+      <label class="opt"><input type="radio" name="agua_hoy" value="Generador" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">⛽</span><div class="ot"><span class="on">Generador</span><span class="od">Combustible</span></div></div></label>
+      <label class="opt"><input type="radio" name="agua_hoy" value="Electricidad" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">⚡</span><div class="ot"><span class="on">Electricidad</span><span class="od">Red eléctrica</span></div></div></label>
+      <label class="opt"><input type="radio" name="agua_hoy" value="Molino" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">💨</span><div class="ot"><span class="on">Molino</span><span class="od">Eólico</span></div></div></label>
+      <label class="opt"><input type="radio" name="agua_hoy" value="Sin agua" onchange="chk(3)"><div class="ob"><div class="or"></div><span class="oe">❌</span><div class="ot"><span class="on">Sin agua</span><span class="od">No tengo</span></div></div></label>
     </div>
   </div></div>
   <button class="btn" id="b3" onclick="nx(3)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S4 ANIMALES / LITROS ═══ -->
+<!-- S4 CONSUMO (animales exacto O litros) -->
 <div class="step" id="step-4">
   <button class="btn-back" onclick="bk(4)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc" id="card-anim"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+
+  <!-- Si uso = Ganado -->
+  <div class="fc" id="card-anim"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Consumo de agua</p></div>
   <div class="fcb">
-    <label class="ql">¿Cuántos animales máximo estimás?</label>
-    <span class="qs">Considerá el máximo que vas a tener en el campo</span>
-    <select class="fs" id="animales" onchange="chk(4)">
-      <option value="">Seleccione</option>
-      <option>Menos que 40 animales</option><option>Entre 40-100 animales</option>
-      <option>Entre 100-300 animales</option><option>Entre 300-500 animales</option>
-      <option>Más de 500 animales</option>
-    </select>
+    <label class="ql">¿Cuántos animales tenés en el campo?</label>
+    <span class="qs">Ingresá el número exacto — usamos 60 L/animal/día (consumo verano)</span>
+    <div class="input-unit">
+      <input type="number" class="fi" id="animales" placeholder="Ej: 200" min="1" max="9999"
+        oninput="valNum('animales','msg-anim',1,9999,'b4')"
+        onkeydown="if(event.key==='Enter')clickBtn('b4')">
+      <span class="unit-label">cabezas</span>
+    </div>
+    <div class="field-msg" id="msg-anim"></div>
+    <div id="anim-calc" style="margin-top:10px;font-size:13px;color:var(--ok);font-weight:500;display:none"></div>
   </div></div>
-  <div class="fc hidden" id="card-lit"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+
+  <!-- Si uso ≠ Ganado -->
+  <div class="fc hidden" id="card-lit"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Consumo de agua</p></div>
   <div class="fcb">
-    <label class="ql">¿Cuántos litros al día estimás?</label>
-    <span class="qs">Consumo diario total del campo</span>
-    <select class="fs" id="litros" onchange="chk(4)">
-      <option value="">Seleccione</option>
-      <option>Menos de 30.000 litros/día</option><option>Entre 30.000 y 60.000 litros/día</option>
-      <option>Entre 60.000 y 100.000 litros/día</option><option>Entre 100.000 y 200.000 litros/día</option>
-      <option>Más de 200.000 litros/día</option>
-    </select>
+    <label class="ql">¿Cuántos litros por día necesitás?</label>
+    <span class="qs">Consumo diario total estimado de tu campo</span>
+    <div class="input-unit">
+      <input type="number" class="fi" id="litros" placeholder="Ej: 12000" min="100"
+        oninput="valNum('litros','msg-lit',100,500000,'b4')"
+        onkeydown="if(event.key==='Enter')clickBtn('b4')">
+      <span class="unit-label">L/día</span>
+    </div>
+    <div class="field-msg" id="msg-lit"></div>
   </div></div>
+
   <button class="btn" id="b4" onclick="nx(4)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S5 PERFORACIÓN ═══ -->
+<!-- S5 PERFORACIÓN -->
 <div class="step" id="step-5">
   <button class="btn-back" onclick="bk(5)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Datos de la perforación</p></div>
   <div class="fcb">
     <label class="ql">¿Tenés perforación en el campo?</label>
-    <span class="qs">Si tenés pozo, te vamos a preguntar el diámetro para elegir la bomba exacta</span>
+    <span class="qs">Si tenés pozo, te preguntamos el diámetro para elegir la bomba exacta</span>
     <div class="opts row">
-      <label class="opt il" style="flex:1"><input type="radio" name="usar_perf" value="SI" onchange="onPerf5()"><div class="ob"><span class="oe">✅</span><span class="on">Sí, tengo</span></div></label>
-      <label class="opt il" style="flex:1"><input type="radio" name="usar_perf" value="NO" onchange="onPerf5()"><div class="ob"><span class="oe">❌</span><span class="on">No tengo</span></div></label>
-      <label class="opt il" style="flex:1"><input type="radio" name="usar_perf" value="No Sé" onchange="onPerf5()"><div class="ob"><span class="oe">🤔</span><span class="on">No sé</span></div></label>
+      <label class="opt il" style="flex:1"><input type="radio" name="usar_perf" value="SI" onchange="onPerf()"><div class="ob"><span class="oe">✅</span><span class="on">Sí, tengo</span></div></label>
+      <label class="opt il" style="flex:1"><input type="radio" name="usar_perf" value="NO" onchange="onPerf()"><div class="ob"><span class="oe">❌</span><span class="on">No tengo</span></div></label>
+      <label class="opt il" style="flex:1"><input type="radio" name="usar_perf" value="No Sé" onchange="onPerf()"><div class="ob"><span class="oe">🤔</span><span class="on">No sé</span></div></label>
     </div>
   </div></div>
   <button class="btn" id="b5" onclick="nx5()" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S6 DIÁMETRO ═══ -->
+<!-- S6 DIÁMETRO (solo si tiene perforación) -->
 <div class="step" id="step-6">
   <button class="btn-back" onclick="bk(6)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Datos de la perforación</p></div>
   <div class="fcb">
     <label class="ql">¿Cuál es el diámetro de la perforación?</label>
     <span class="qs">El diámetro determina qué bomba puede entrar al pozo</span>
     <div class="opts g2">
-      <label class="opt"><input type="radio" name="diametro" value="63mm (2.5&quot;)" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">63mm — 2.5"</span><span class="od">Pozo angosto</span></div></div></label>
-      <label class="opt"><input type="radio" name="diametro" value="75mm (3&quot;)" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">75mm — 3"</span><span class="od">Estándar rural</span></div></div></label>
-      <label class="opt"><input type="radio" name="diametro" value="80-90mm (3&quot; a 3.5&quot;)" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">80-90mm — 3" a 3.5"</span><span class="od">Rango medio</span></div></div></label>
-      <label class="opt"><input type="radio" name="diametro" value="100mm (4&quot;)" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">100mm — 4"</span><span class="od">Mayor caudal</span></div></div></label>
-      <label class="opt"><input type="radio" name="diametro" value="110-115mm (4&quot; a 4.5&quot;)" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">110-115mm — 4" a 4.5"</span><span class="od">Alta capacidad</span></div></div></label>
-      <label class="opt"><input type="radio" name="diametro" value='6" o más (152mm+)' onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">6" o más — 152mm+</span><span class="od">Muy alta capacidad</span></div></div></label>
-      <label class="opt" style="grid-column:1/-1"><input type="radio" name="diametro" value="No sé / Sin perforación" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">No sé / No tengo perforación</span><span class="od">Lo definimos con el estudio técnico</span></div></div></label>
+      <label class="opt"><input type="radio" name="diametro" value="63mm" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">63mm — 2.5"</span><span class="od">Pozo angosto</span></div></div></label>
+      <label class="opt"><input type="radio" name="diametro" value="75mm" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">75mm — 3"</span><span class="od">Angosto estándar</span></div></div></label>
+      <label class="opt"><input type="radio" name="diametro" value="80-90mm" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">80-90mm — 3" a 3.5"</span><span class="od">Estándar rural</span></div></div></label>
+      <label class="opt"><input type="radio" name="diametro" value="100mm" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">100mm — 4"</span><span class="od">Mayor caudal</span></div></div></label>
+      <label class="opt"><input type="radio" name="diametro" value="110-115mm" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">110-115mm — 4" a 4.5"</span><span class="od">Alta capacidad</span></div></div></label>
+      <label class="opt"><input type="radio" name="diametro" value="6ormas" onchange="chk(6)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">6" o más — 152mm+</span><span class="od">Muy alta capacidad</span></div></div></label>
     </div>
   </div></div>
   <button class="btn" id="b6" onclick="nx(6)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S7 PROFUNDIDAD ═══ -->
+<!-- S7 PROFUNDIDAD + ALTURA TANQUE -->
 <div class="step" id="step-7">
   <button class="btn-back" onclick="bk(7)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Altura manométrica total</p></div>
   <div class="fcb">
-    <label class="ql">¿A qué profundidad estimás el agua?</label>
-    <span class="qs">La profundidad del espejo de agua determina la potencia del equipo</span>
-    <div class="opts g2">
-      <label class="opt"><input type="radio" name="profundidad" value="Menos de 30m" onchange="chk(7)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">Menos de 30m</span><span class="od">Pozo superficial</span></div></div></label>
-      <label class="opt"><input type="radio" name="profundidad" value="Entre 30-50m" onchange="chk(7)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">Entre 30 y 50m</span><span class="od">Profundidad media</span></div></div></label>
-      <label class="opt"><input type="radio" name="profundidad" value="Entre 50-80m" onchange="chk(7)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">Entre 50 y 80m</span><span class="od">Profundidad alta</span></div></div></label>
-      <label class="opt"><input type="radio" name="profundidad" value="Más de 80m" onchange="chk(7)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">Más de 80m</span><span class="od">Pozo profundo</span></div></div></label>
-      <label class="opt" style="grid-column:1/-1"><input type="radio" name="profundidad" value="No sé" onchange="chk(7)"><div class="ob"><div class="or"></div><div class="ot"><span class="on">No sé</span><span class="od">Lo estimamos juntos</span></div></div></label>
+    <label class="ql">¿A qué profundidad está el agua?</label>
+    <span class="qs">Metros desde la superficie hasta el espejo de agua</span>
+    <div class="input-unit" style="margin-bottom:6px">
+      <input type="number" class="fi" id="profundidad" placeholder="Ej: 35" min="1" max="300"
+        oninput="valNum('profundidad','msg-prof',1,300,'b7');calcAltura()"
+        onkeydown="if(event.key==='Enter')document.getElementById('altura_tanque').focus()">
+      <span class="unit-label">metros</span>
+    </div>
+    <div class="field-msg" id="msg-prof"></div>
+
+    <div class="qsep"></div>
+
+    <label class="ql">¿A qué altura está el tanque elevado?</label>
+    <span class="qs">Metros desde el suelo hasta el tanque donde llega el agua (default: 5m)</span>
+    <div class="input-unit" style="margin-bottom:6px">
+      <input type="number" class="fi" id="altura_tanque" placeholder="5" min="0" max="50" value="5"
+        oninput="calcAltura()"
+        onkeydown="if(event.key==='Enter')clickBtn('b7')">
+      <span class="unit-label">metros</span>
+    </div>
+
+    <div id="altura-total" style="display:none;margin-top:10px;background:var(--azul-xlight,#eef3f9);border:1px solid var(--gris-b);border-radius:7px;padding:10px 14px;font-size:13px;color:var(--azul-txt)">
+      <strong>Altura manométrica total: <span id="altura-val" style="color:var(--azul);font-size:15px">—</span> m</strong>
+      <div style="font-size:11px;color:var(--gris);margin-top:2px">Profundidad + altura del tanque</div>
     </div>
   </div></div>
   <button class="btn" id="b7" onclick="nx(7)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S8 INVERSIÓN ═══ -->
+<!-- S8 INVERSIÓN -->
 <div class="step" id="step-8">
   <button class="btn-back" onclick="bk(8)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
+  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Presupuesto disponible</p></div>
   <div class="fcb">
     <label class="ql">¿Qué inversión estás evaluando?</label>
     <span class="qs">Los sistemas arrancan desde $1.500.000</span>
@@ -308,79 +349,60 @@ h1 .v{color:var(--verde)}
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ S9 TIMING ═══ -->
+<!-- S9 CONTACTO -->
 <div class="step" id="step-9">
   <button class="btn-back" onclick="bk(9)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
-  <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Carga de datos técnicos de perforación</p></div>
-  <div class="fcb">
-    <label class="ql">¿Cuándo querés resolverlo?</label>
-    <div class="opts">
-      <label class="opt"><input type="radio" name="timing" value="Urgente" onchange="chk(9)"><div class="ob"><div class="or"></div><span class="oe">🔥</span><div class="ot"><span class="on">Urgente</span><span class="od">Lo necesito cuanto antes</span></div></div></label>
-      <label class="opt"><input type="radio" name="timing" value="1-3 meses" onchange="chk(9)"><div class="ob"><div class="or"></div><span class="oe">📅</span><div class="ot"><span class="on">1 a 3 meses</span><span class="od">Estoy planificando</span></div></div></label>
-      <label class="opt"><input type="radio" name="timing" value="Solo evaluando" onchange="chk(9)"><div class="ob"><div class="or"></div><span class="oe">🔍</span><div class="ot"><span class="on">Solo evaluando</span><span class="od">Quiero información primero</span></div></div></label>
-    </div>
-  </div></div>
-  <button class="btn" id="b9" onclick="nx(9)" disabled>Continuar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-  <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
-</div>
-
-<!-- ═══ S10 CONTACTO (WA + EMAIL) ═══ -->
-<div class="step" id="step-10">
-  <button class="btn-back" onclick="bk(10)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver</button>
   <div class="fc"><div class="fch"><h2>Formulario de Ingeniería</h2><p>Último paso — tus datos de contacto</p></div>
   <div class="fcb">
-
-    <!-- WhatsApp -->
+    <label class="ql">¿Cuándo querés resolverlo?</label>
+    <div class="opts" style="margin-bottom:18px">
+      <label class="opt"><input type="radio" name="timing" value="Urgente" onchange="chkContacto()"><div class="ob"><div class="or"></div><span class="oe">🔥</span><div class="ot"><span class="on">Urgente</span><span class="od">Lo necesito cuanto antes</span></div></div></label>
+      <label class="opt"><input type="radio" name="timing" value="1-3 meses" onchange="chkContacto()"><div class="ob"><div class="or"></div><span class="oe">📅</span><div class="ot"><span class="on">1 a 3 meses</span><span class="od">Estoy planificando</span></div></div></label>
+      <label class="opt"><input type="radio" name="timing" value="Solo evaluando" onchange="chkContacto()"><div class="ob"><div class="or"></div><span class="oe">🔍</span><div class="ot"><span class="on">Solo evaluando</span><span class="od">Quiero información primero</span></div></div></label>
+    </div>
+    <div class="qsep"></div>
     <label class="ql">¿Número de WhatsApp? <span style="color:var(--rojo);font-size:11px">*</span></label>
-    <span class="qs">Nuestro asesor te va a contactar por acá</span>
     <div style="position:relative;margin-bottom:6px">
       <span style="position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none">🇦🇷</span>
       <input type="tel" class="fi" id="wa-input" style="padding-left:40px" placeholder="11 2739 9430"
-        oninput="valWA()"
-        onkeydown="if(event.key==='Enter')clickBtn('b10')"
-        maxlength="15">
+        oninput="valWA()" onkeydown="if(event.key==='Enter')document.getElementById('email-input').focus()" maxlength="15">
     </div>
     <div class="field-msg" id="msg-wa"></div>
-
     <div class="qsep"></div>
-
-    <!-- Email -->
     <label class="ql">¿Tu email? <span style="color:var(--rojo);font-size:11px">*</span></label>
-    <span class="qs">Te mandamos el resumen técnico — verificá que esté bien escrito</span>
+    <span class="qs">Verificá que esté bien escrito — te mandamos el resumen técnico</span>
     <input type="email" class="fi" id="email-input" placeholder="tucampo@ejemplo.com"
-      oninput="valEmail()"
-      onkeydown="if(event.key==='Enter')clickBtn('b10')">
+      oninput="valEmail()" onkeydown="if(event.key==='Enter')clickBtn('b9')">
     <div class="field-msg" id="msg-email"></div>
-
   </div></div>
-
-  <!-- BOTÓN FINAL — sin referencia a WhatsApp -->
-  <button class="btn" id="b10" onclick="sub()" disabled style="font-size:15px;padding:15px;margin-top:2px">
+  <button class="btn" id="b9" onclick="sub()" disabled style="font-size:15px;padding:15px">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
     Apretá aquí para verificar los datos
   </button>
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ PANTALLA A: VERIFICAR DATOS ═══ -->
+<!-- PANTALLA A: VERIFICAR -->
 <div class="step" id="step-final">
   <div class="fc">
     <div class="fch"><h2>Formulario de Ingeniería</h2><p>Verificá tus datos antes de continuar</p></div>
     <div class="final-wrap">
-      <div class="final-titulo">¿Todo está correcto?</div>
-      <div class="final-sub">Revisá cada dato. Podés volver a editarlo si algo no está bien.</div>
-
-      <!-- LISTA DE ÍTEMS NUMERADOS -->
+      <div style="text-align:center;margin-bottom:18px">
+        <div style="width:48px;height:48px;background:var(--gris-bg);border:2px solid var(--gris-b);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--azul)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div style="font-size:19px;font-weight:800;color:var(--azul-txt);margin-bottom:5px">¿Todo está correcto?</div>
+        <div style="font-size:13px;color:var(--gris);line-height:1.55">Revisá cada dato. Podés volver a editarlo antes de buscar tu bomba.</div>
+      </div>
       <ul class="resumen-list" id="resumen-lista"></ul>
-
       <div style="margin-top:20px">
-        <button class="btn" onclick="irAAcciones()" style="font-size:15px;padding:15px">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          Sí, todo está correcto — continuar
+        <button class="btn" onclick="buscarBomba()" style="font-size:15px;padding:15px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Buscar mi bomba ideal
         </button>
-        <button class="btn-back" style="width:100%;justify-content:center;margin-top:8px;margin-bottom:0" onclick="show(10)">
+        <button class="btn-back" style="width:100%;justify-content:center;margin-top:8px;margin-bottom:0" onclick="show(9)">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          Volver atrás a editarlo
+          Volver a editar
         </button>
       </div>
     </div>
@@ -388,51 +410,64 @@ h1 .v{color:var(--verde)}
   <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
 </div>
 
-<!-- ═══ PANTALLA B: ACCIONES ═══ -->
-<div class="step" id="step-acciones">
+<!-- PANTALLA BUSCANDO -->
+<div class="step" id="step-buscando">
   <div class="fc">
-    <div class="fch" style="background:var(--verde)"><h2>¡Listo! ¿Cómo querés continuar?</h2><p>Elegí la opción que mejor se adapte a vos</p></div>
+    <div class="fch" style="background:var(--verde)"><h2>Buscando tu bomba ideal...</h2><p>Consultando catálogo en tiempo real</p></div>
+    <div class="spinner-wrap">
+      <div class="spinner"></div>
+      <p>Cruzando tus datos con <strong id="spin-count">8</strong> equipos del catálogo</p>
+    </div>
+  </div>
+</div>
+
+<!-- PANTALLA RESULTADO -->
+<div class="step" id="step-resultado">
+  <div class="fc">
+    <div class="fch" style="background:var(--verde)"><h2>¡Encontramos tu equipo!</h2><p>Basado en tus datos exactos de campo</p></div>
     <div class="final-wrap">
 
-      <!-- OPCIÓN 1: WHATSAPP OPERADOR VIRTUAL -->
-      <div style="background:var(--ok-bg);border:2px solid #25d366;border-radius:10px;padding:18px;margin-bottom:12px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <div style="width:38px;height:38px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </div>
-          <div>
-            <div style="font-size:15px;font-weight:700;color:var(--ok)">Operador virtual — 24hs</div>
-            <div style="font-size:12px;color:#2e7d50">Respuesta garantizada en menos de 24hs</div>
-          </div>
-        </div>
-        <div style="font-size:13px;color:#2e7d50;line-height:1.55;margin-bottom:13px">Tus datos se envían automáticamente. El asesor analiza tu campo y te manda el estudio técnico con el presupuesto.</div>
-        <a href="#" id="wa-btn" class="btn-wa" target="_blank">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Apretá para hablar con un operador virtual
-        </a>
+      <!-- CARD BOMBA -->
+      <div class="bomba-card" id="bomba-card">
+        <div class="bomba-badge">⭐ Tu bomba ideal</div>
+        <div class="bomba-codigo" id="b-codigo"></div>
+        <div class="bomba-nombre" id="b-nombre"></div>
+        <div class="bomba-specs" id="b-specs"></div>
+        <div class="bomba-precio" id="b-precio"><span>Kit completo con paneles</span></div>
+        <div class="bomba-checks" id="b-checks"></div>
       </div>
 
-      <div class="divider">o si preferís</div>
+      <!-- BOTONES DE ACCIÓN -->
+      <a href="#" id="btn-wa-resultado" class="btn-wa" target="_blank">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pedir cotización por WhatsApp
+      </a>
 
-      <!-- OPCIÓN 2: COTIZACIÓN AUTOMÁTICA -->
-      <div style="background:var(--acento-bg);border:2px solid var(--acento-bord);border-radius:10px;padding:18px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <div style="width:38px;height:38px;background:var(--acento);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--azul-txt)" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <div>
-            <div style="font-size:15px;font-weight:700;color:var(--azul-txt)">Seleccioná tu equipo</div>
-            <div style="font-size:12px;color:var(--gris)">Cotización automática con tu base de datos</div>
-          </div>
-        </div>
-        <div style="font-size:13px;color:var(--gris);line-height:1.55;margin-bottom:13px">Cruzamos tus datos con nuestra base de equipos y te mostramos los modelos compatibles con precio incluido.</div>
-        <button class="btn-cotizar" onclick="alert('En construcción 🚧\n\nPronto vas a poder ver los equipos compatibles con tu campo directamente acá.\n\nPor ahora hablá con nuestro operador virtual 👆')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-          Buscar equipos disponibles para mi campo
-        </button>
-        <div style="font-size:11px;color:var(--gris);text-align:center;margin-top:7px">🚧 Próximamente disponible</div>
+      <a href="#" id="btn-roi" class="btn-roi hidden" target="_blank" style="margin-top:10px">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+        📊 Ver retorno de inversión vs generador
+      </a>
+
+      <button class="btn-rst" onclick="rst()">Volver a empezar</button>
+    </div>
+  </div>
+  <div class="ssl-note">◎ Conexión segura SSL · Datos protegidos</div>
+</div>
+
+<!-- SIN RESULTADO -->
+<div class="step" id="step-noresult">
+  <div class="fc">
+    <div class="fch"><h2>Formulario de Ingeniería</h2><p>Revisión manual recomendada</p></div>
+    <div class="final-wrap">
+      <div class="no-result" style="margin-bottom:18px">
+        <p style="font-size:24px;margin-bottom:10px">🔍</p>
+        <p><strong>No encontramos un equipo exacto en el catálogo actual</strong><br><br>
+        Tu caso puede requerir un análisis técnico personalizado. Nuestro equipo te va a asesorar directamente.</p>
       </div>
-
+      <a href="#" id="btn-wa-noresult" class="btn-wa" target="_blank">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hablar con un asesor técnico
+      </a>
       <button class="btn-rst" onclick="rst()">Volver a empezar</button>
     </div>
   </div>
@@ -442,24 +477,12 @@ h1 .v{color:var(--verde)}
 </div><!-- /wrap -->
 <script>
 const D={};
-const TOTAL=10;
-const WA='5491127399430';         // ← número real de Febecos
-const EMAIL_TO='ventas@febecos.com'; // ← email interno Febecos
-
-// ── ITEMS PARA EL RESUMEN (label, clave en D) ──
-const CAMPOS=[
-  {n:1, lbl:'Zona del campo',    k:'zona'},
-  {n:2, lbl:'Uso del agua',      k:'uso'},
-  {n:3, lbl:'Agua hoy',          k:'agua_hoy'},
-  {n:4, lbl:'Cantidad',          k:'_consumo'}, // virtual: animales o litros
-  {n:5, lbl:'Usar perforación',  k:'usar_perf'},
-  {n:6, lbl:'Diámetro',          k:'diametro'},
-  {n:7, lbl:'Profundidad',       k:'profundidad'},
-  {n:8, lbl:'Inversión',         k:'inversion'},
-  {n:9, lbl:'Plazo',             k:'timing'},
-  {n:10,lbl:'WhatsApp',          k:'whatsapp'},
-  {n:11,lbl:'Email',             k:'email'},
-];
+const TOTAL=9;
+const WA='5491127399430';
+const CATALOG_URL='https://simulador-roi-seven.vercel.app/api/catalog';
+const ROI_URL='https://simulador-roi-seven.vercel.app';
+const SUPA_URL='https://wlcmpqwmqwugjwrssatj.supabase.co';
+const SUPA_KEY='sb_publishable_3uuwRuN4gL5liPVoJJIPIQ_FSX5ypmn';
 
 // ── PROGRESS ──
 function prog(n){
@@ -474,38 +497,106 @@ function show(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   let id;
   if(n==='final') id='step-final';
-  else if(n==='acciones') id='step-acciones';
+  else if(n==='buscando') id='step-buscando';
+  else if(n==='resultado') id='step-resultado';
+  else if(n==='noresult') id='step-noresult';
   else id='step-'+n;
   document.getElementById(id).classList.add('active');
   if(typeof n==='number') prog(n);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── HELPER: click botón si no está disabled ──
-function clickBtn(id){
-  const b=document.getElementById(id);
-  if(b&&!b.disabled) b.click();
+function bk(f){show(f-1);}
+function clickBtn(id){const b=document.getElementById(id);if(b&&!b.disabled)b.click();}
+
+// ── GUARDAR DATOS ──
+function sv(n){
+  if(n===1) D.zona=document.getElementById('zona').value.trim();
+  if(n===2) D.uso=r('uso');
+  if(n===3) D.agua_hoy=r('agua_hoy');
+  if(n===4){
+    D.animales=document.getElementById('animales').value;
+    D.litros=document.getElementById('litros').value;
+    // Calcular litros necesarios
+    if(D.uso==='Ganado' && D.animales){
+      D.litros_necesarios=parseInt(D.animales)*60;
+    } else {
+      D.litros_necesarios=parseInt(D.litros)||0;
+    }
+  }
+  if(n===5) D.usar_perf=r('usar_perf');
+  if(n===6) D.diametro=r('diametro');
+  if(n===7){
+    D.profundidad=parseInt(document.getElementById('profundidad').value)||0;
+    D.altura_tanque=parseInt(document.getElementById('altura_tanque').value)||5;
+    D.altura_total=D.profundidad+D.altura_tanque;
+  }
+  if(n===8) D.inversion=r('inversion');
+  if(n===9){D.timing=r('timing');D.whatsapp=document.getElementById('wa-input').value.trim();D.email=document.getElementById('email-input').value.trim();}
 }
 
-// ── VALIDACIÓN TEXTO LIBRE ──
-function valText(inputId, btnId, minLen){
-  const v=document.getElementById(inputId).value.trim();
-  document.getElementById(btnId).disabled = v.length < minLen;
+function nx(f){sv(f);if(f===2)setup4();show(f+1);}
+function r(n){const e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
+
+// ── VALIDACIONES ──
+function valNum(id,msgId,min,max,btnId){
+  const v=parseInt(document.getElementById(id).value);
+  const inp=document.getElementById(id);
+  const msg=document.getElementById(msgId);
+  const ok=!isNaN(v)&&v>=min&&v<=max;
+  inp.className='fi'+(ok?' valido':document.getElementById(id).value?' error':'');
+  if(ok){
+    msg.className='field-msg ok';
+    msg.textContent='✓ Valor válido';
+    if(id==='animales'){
+      const litros=v*60;
+      document.getElementById('anim-calc').style.display='block';
+      document.getElementById('anim-calc').textContent=`→ Consumo estimado: ${litros.toLocaleString('es-AR')} L/día en verano`;
+    }
+  } else if(document.getElementById(id).value){
+    msg.className='field-msg err';
+    msg.textContent=`Ingresá un valor entre ${min} y ${max}`;
+    if(id==='animales') document.getElementById('anim-calc').style.display='none';
+  } else {
+    msg.className='field-msg';
+    msg.textContent='';
+  }
+  if(btnId){
+    // Para paso 7, verificar ambos campos
+    if(btnId==='b7'){
+      const p=parseInt(document.getElementById('profundidad').value);
+      document.getElementById('b7').disabled=!(p>=1&&p<=300);
+    } else {
+      document.getElementById(btnId).disabled=!ok;
+    }
+  }
 }
 
-// ── VALIDACIÓN WHATSAPP ──
+function calcAltura(){
+  const p=parseInt(document.getElementById('profundidad').value)||0;
+  const t=parseInt(document.getElementById('altura_tanque').value)||5;
+  const total=p+t;
+  if(p>0){
+    document.getElementById('altura-total').style.display='block';
+    document.getElementById('altura-val').textContent=total;
+    document.getElementById('b7').disabled=false;
+  } else {
+    document.getElementById('altura-total').style.display='none';
+    document.getElementById('b7').disabled=true;
+  }
+}
+
 function valWA(){
   const v=document.getElementById('wa-input').value.trim();
   const inp=document.getElementById('wa-input');
   const msg=document.getElementById('msg-wa');
-  const ok=v.length>=8 && /^\d+$/.test(v.replace(/[\s\-]/g,''));
+  const ok=v.length>=8&&/^\d+$/.test(v.replace(/[\s\-]/g,''));
   inp.className='fi'+(ok?' valido':v.length>0?' error':'');
   msg.className='field-msg'+(ok?' ok':v.length>0?' err':'');
-  msg.textContent=ok?'✓ Número válido':v.length>0?'Ingresá un número válido (solo dígitos, mínimo 8)':'';
+  msg.textContent=ok?'✓ Número válido':v.length>0?'Ingresá solo dígitos, mínimo 8':'';
   chkContacto();
 }
 
-// ── VALIDACIÓN EMAIL ──
 function valEmail(){
   const v=document.getElementById('email-input').value.trim();
   const inp=document.getElementById('email-input');
@@ -517,45 +608,23 @@ function valEmail(){
   chkContacto();
 }
 
-// ── HABILITAR BOTÓN PASO 10 ──
 function chkContacto(){
   const wa=document.getElementById('wa-input').value.trim();
   const em=document.getElementById('email-input').value.trim();
+  const timing=r('timing');
   const waOk=wa.length>=8&&/^\d+$/.test(wa.replace(/[\s\-]/g,''));
   const emOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
-  document.getElementById('b10').disabled=!(waOk&&emOk);
+  document.getElementById('b9').disabled=!(waOk&&emOk&&timing);
 }
-
-// ── NAVEGACIÓN ──
-function bk(f){show(f-1);}
-
-function sv(n){
-  if(n===1) D.zona=document.getElementById('zona').value.trim();
-  if(n===2) D.uso=r('uso');
-  if(n===3) D.agua_hoy=r('agua_hoy');
-  if(n===4){D.animales=document.getElementById('animales').value;D.litros=document.getElementById('litros').value;}
-  if(n===5){D.usar_perf=r('usar_perf');D.tiene_perf=r('tiene_perf');}
-  if(n===6) D.diametro=r('diametro');
-  if(n===7) D.profundidad=r('profundidad');
-  if(n===8) D.inversion=r('inversion');
-  if(n===9) D.timing=r('timing');
-  if(n===10){D.whatsapp=document.getElementById('wa-input').value.trim();D.email=document.getElementById('email-input').value.trim();}
-}
-
-function nx(f){sv(f);if(f===2)setup4();show(f+1);}
-
-function r(n){const e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
 
 function chk(n){
   let ok=false;
   if(n===3) ok=!!r('agua_hoy');
-  if(n===4){const u=D.uso||r('uso');ok=u==='Ganado'?!!document.getElementById('animales').value:!!document.getElementById('litros').value;}
-  if(n===5){const v=r('usar_perf');ok=v==='SI'?!!r('tiene_perf'):!!v;}
   if(n===6) ok=!!r('diametro');
-  if(n===7) ok=!!r('profundidad');
-  if(n===9) ok=!!r('timing');
   const b=document.getElementById('b'+n);if(b)b.disabled=!ok;
 }
+
+function onUso(){document.getElementById('b2').disabled=false;}
 
 function setup4(){
   const u=D.uso;
@@ -565,19 +634,17 @@ function setup4(){
   document.getElementById('b4').disabled=true;
 }
 
-function onPerf5(){
-  // Habilitar botón al seleccionar cualquier opción
+function onPerf(){
   const v=r('usar_perf');
   document.getElementById('b5').disabled=!v;
 }
 
 function nx5(){
   sv(5);
-  const v=D.usar_perf;
   // SI tiene perforación → paso 6 (diámetro)
-  // NO / No Sé → salta diámetro, va directo a paso 7 (profundidad)
-  if(v==='SI') show(6);
-  else show(7);
+  // NO / No Sé → salta a paso 7 (profundidad), diámetro default 4" (más permisivo)
+  if(D.usar_perf==='SI') show(6);
+  else { D.diametro='110-115mm'; show(7); } // default permisivo si no tiene perf
 }
 
 function onInv(){
@@ -587,130 +654,34 @@ function onInv(){
   v==='Menos de $1.5M'?(a.classList.add('on'),b.disabled=true):(a.classList.remove('on'),b.disabled=false);
 }
 
-// ── SUBMIT: va a pantalla verificación ──
+// ── SUBMIT → VERIFICAR ──
 function sub(){
-  sv(10);
+  sv(9);
   renderResumen();
   show('final');
 }
 
-// ── IR A ACCIONES: envía email interno + arma links ──
-function irAAcciones(){
-  // Armar mensaje WA
-  const consumo=D.uso==='Ganado'?'• Animales: '+D.animales:'• Litros/día: '+D.litros;
-  const msg=[
-    'Hola! Soy productor/a de '+(D.zona||'Argentina')+'.',
-    'Completé la evaluación de bombeo solar en Febecos.',
-    '',
-    '📋 *Mis datos:*',
-    '• Zona: '+D.zona,
-    '• Uso del agua: '+D.uso,
-    '• Agua hoy: '+D.agua_hoy,
-    consumo,
-    '• Perforación: '+D.usar_perf+(D.tiene_perf?' / Tiene: '+D.tiene_perf:''),
-    '• Diámetro: '+D.diametro,
-    '• Profundidad: '+D.profundidad,
-    '• Inversión: '+D.inversion,
-    '• Plazo: '+D.timing,
-    '• WhatsApp: '+D.whatsapp,
-    '• Email: '+D.email,
-    '',
-    '¿Me pueden asesorar con el estudio técnico?'
-  ].join('\n');
-
-  document.getElementById('wa-btn').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
-
-  // Enviar email interno (via mailto — en producción reemplazar por API)
-  const subj='Nueva evaluación Febecos — '+D.zona+' — '+D.uso;
-  const body=[
-    'Nueva evaluación recibida desde el formulario web.',
-    '',
-    'DATOS DEL CLIENTE:',
-    'Zona: '+D.zona,
-    'Uso: '+D.uso,
-    'Agua hoy: '+D.agua_hoy,
-    D.uso==='Ganado'?'Animales: '+D.animales:'Litros/día: '+D.litros,
-    'Perforación: '+D.usar_perf+(D.tiene_perf?' / '+D.tiene_perf:''),
-    'Diámetro: '+D.diametro,
-    'Profundidad: '+D.profundidad,
-    'Inversión: '+D.inversion,
-    'Plazo: '+D.timing,
-    '',
-    'CONTACTO:',
-    'WhatsApp: '+D.whatsapp,
-    'Email: '+D.email,
-    '',
-    'Fecha: '+new Date().toLocaleString('es-AR'),
-  ].join('\n');
-
-  // Enviar email interno via API (silencioso, sin popup)
-  try{
-    fetch('/api/email',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({...D})
-    }).then(r=>r.json()).then(d=>{
-      if(d.ok) console.log('[email enviado OK]');
-      else console.warn('[email error]',d.error);
-    }).catch(e=>console.warn('[email error]',e));
-  }catch(e){}
-
-  // Guardar en Supabase directamente
-  try{
-    const SUPA_URL='https://wlcmpqwmqwugjwrssatj.supabase.co';
-    const SUPA_KEY='sb_publishable_3uuwRuN4gL5liPVoJJIPIQ_FSX5ypmn';
-    fetch(SUPA_URL+'/rest/v1/leads',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'apikey':SUPA_KEY,
-        'Authorization':'Bearer '+SUPA_KEY,
-        'Prefer':'return=minimal'
-      },
-      body:JSON.stringify({
-        zona:D.zona,uso:D.uso,agua_hoy:D.agua_hoy,
-        animales:D.animales||null,litros:D.litros||null,
-        usar_perf:D.usar_perf,diametro:D.diametro||null,
-        profundidad:D.profundidad,inversion:D.inversion,
-        timing:D.timing,whatsapp:D.whatsapp,email:D.email,
-        origen:'selector-web',estado:'nuevo'
-      })
-    }).then(r=>{
-      if(r.ok)console.log('[lead guardado OK]');
-      else r.text().then(t=>console.warn('[lead error]',r.status,t));
-    }).catch(e=>console.warn('[lead error]',e));
-  }catch(e){console.warn('[lead excepcion]',e);}
-  // Backup localStorage
-  try{
-    const leads=JSON.parse(localStorage.getItem('febecos_leads')||'[]');
-    leads.push({...D,ts:new Date().toISOString()});
-    localStorage.setItem('febecos_leads',JSON.stringify(leads));
-  }catch(e){}
-
-  show('acciones');
-}
-
-// ── RENDER RESUMEN como lista numerada ──
+// ── RENDER RESUMEN ──
 function renderResumen(){
-  D._consumo = D.uso==='Ganado' ? D.animales : D.litros;
-  const tiene = D.usar_perf==='SI' && D.tiene_perf ? ' — Tiene: '+D.tiene_perf : '';
-  D._perf_full = D.usar_perf ? D.usar_perf+tiene : '';
+  const consumo=D.uso==='Ganado'
+    ?`${parseInt(D.animales).toLocaleString('es-AR')} animales → ${D.litros_necesarios.toLocaleString('es-AR')} L/día`
+    :`${parseInt(D.litros).toLocaleString('es-AR')} L/día`;
 
   const items=[
-    {n:1,  lbl:'Zona del campo',     val:D.zona,       step:1},
-    {n:2,  lbl:'Uso del agua',       val:D.uso,        step:2},
-    {n:3,  lbl:'Agua hoy',           val:D.agua_hoy,   step:3},
-    {n:4,  lbl:D.uso==='Ganado'?'Cantidad de animales':'Litros por día', val:D._consumo, step:4},
-    {n:5,  lbl:'Usar perforación',   val:D._perf_full, step:5},
-    {n:6,  lbl:'Diámetro',           val:D.diametro,   step:6},
-    {n:7,  lbl:'Profundidad',        val:D.profundidad,step:7},
-    {n:8,  lbl:'Inversión',          val:D.inversion,  step:8},
-    {n:9,  lbl:'Plazo',              val:D.timing,     step:9},
-    {n:10, lbl:'WhatsApp',           val:D.whatsapp,   step:10},
-    {n:11, lbl:'Email',              val:D.email,      step:10},
+    {n:1,lbl:'Zona',val:D.zona,step:1},
+    {n:2,lbl:'Uso del agua',val:D.uso,step:2},
+    {n:3,lbl:'Agua hoy',val:D.agua_hoy,step:3},
+    {n:4,lbl:'Consumo',val:consumo,step:4},
+    {n:5,lbl:'Perforación',val:D.usar_perf,step:5},
+    {n:6,lbl:'Diámetro',val:D.diametro,step:D.usar_perf==='SI'?6:null},
+    {n:7,lbl:'Profundidad',val:D.profundidad?`${D.profundidad}m pozo + ${D.altura_tanque}m tanque = ${D.altura_total}m total`:null,step:7},
+    {n:8,lbl:'Inversión',val:D.inversion,step:8},
+    {n:9,lbl:'Plazo',val:D.timing,step:9},
+    {n:10,lbl:'WhatsApp',val:D.whatsapp,step:9},
+    {n:11,lbl:'Email',val:D.email,step:9},
   ];
 
-  const html=items.filter(i=>i.val).map(i=>`
+  document.getElementById('resumen-lista').innerHTML=items.filter(i=>i.val&&i.step).map(i=>`
     <li class="resumen-item">
       <div class="ri-left">
         <div class="ri-num">${i.n}</div>
@@ -719,23 +690,183 @@ function renderResumen(){
           <span class="ri-valor">${i.val}</span>
         </div>
       </div>
-      <div class="ri-edit">
-        <button class="btn-editar" onclick="show(${i.step})">✏️ Editar</button>
-      </div>
+      <button class="btn-editar" onclick="show(${i.step})">✏️ Editar</button>
     </li>`).join('');
+}
 
-  document.getElementById('resumen-lista').innerHTML=html;
+// ── MAPEO DIÁMETRO → PULGADAS ──
+function diametroMaxBomba(diam){
+  if(diam==='63mm') return 2;
+  if(diam==='75mm') return 2;
+  if(diam==='80-90mm') return 3;
+  if(diam==='100mm') return 3;
+  if(diam==='110-115mm') return 4;
+  if(diam==='6ormas') return 99;
+  return 4; // default
+}
+
+// ── INTERPOLACIÓN LINEAL DE CURVA ──
+function interpolarCurva(curve, alturaRequerida){
+  if(!curve||curve.length===0) return null;
+  // Si la altura está por debajo del mínimo o encima del máximo
+  const minAltura=curve[0].altura_m;
+  const maxAltura=curve[curve.length-1].altura_m;
+  if(alturaRequerida<minAltura||alturaRequerida>maxAltura) return null;
+  // Buscar los dos puntos más cercanos
+  for(let i=0;i<curve.length-1;i++){
+    const p1=curve[i];
+    const p2=curve[i+1];
+    if(alturaRequerida>=p1.altura_m&&alturaRequerida<=p2.altura_m){
+      const ratio=(alturaRequerida-p1.altura_m)/(p2.altura_m-p1.altura_m);
+      return {
+        litros_verano:Math.round(p1.litros_verano+(p2.litros_verano-p1.litros_verano)*ratio),
+        litros_invierno:Math.round(p1.litros_invierno+(p2.litros_invierno-p1.litros_invierno)*ratio),
+        litros_promedio:Math.round(p1.litros_promedio+(p2.litros_promedio-p1.litros_promedio)*ratio),
+      };
+    }
+  }
+  // Exacto en algún punto
+  const exacto=curve.find(p=>p.altura_m===alturaRequerida);
+  return exacto?{litros_verano:exacto.litros_verano,litros_invierno:exacto.litros_invierno,litros_promedio:exacto.litros_promedio}:null;
+}
+
+// ── LÓGICA DE SELECCIÓN DE BOMBA ──
+function suggestPump(catalog, alturaTotal, litrosNecesarios, diametroDiam){
+  const maxPulgadas=diametroMaxBomba(diametroDiam);
+  // 1. Filtrar por diámetro
+  const compatibles=catalog.filter(b=>Number(b.diam_bomba)<=maxPulgadas);
+  // 2. Filtrar por curva y caudal
+  const validas=[];
+  for(const bomba of compatibles){
+    const flow=interpolarCurva(bomba.curve, alturaTotal);
+    if(!flow) continue;
+    if(flow.litros_verano>=litrosNecesarios){
+      validas.push({bomba, flow});
+    }
+  }
+  // 3. Ordenar por precio asc
+  validas.sort((a,b)=>a.bomba.precio_full-b.bomba.precio_full);
+  return validas[0]||null;
+}
+
+// ── BUSCAR BOMBA ──
+async function buscarBomba(){
+  show('buscando');
+
+  // Guardar lead en Supabase
+  try{
+    fetch(SUPA_URL+'/rest/v1/leads',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Prefer':'return=minimal'},
+      body:JSON.stringify({
+        zona:D.zona,uso:D.uso,agua_hoy:D.agua_hoy,
+        animales:D.animales||null,litros:D.litros||null,
+        usar_perf:D.usar_perf,diametro:D.diametro||null,
+        profundidad:D.profundidad,inversion:D.inversion,
+        timing:D.timing,whatsapp:D.whatsapp,email:D.email,
+        origen:'selector-web',estado:'nuevo'
+      })
+    });
+  }catch(e){}
+
+  // Enviar email interno
+  try{
+    fetch('/api/email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...D})});
+  }catch(e){}
+
+  // Traer catálogo
+  try{
+    const res=await fetch(CATALOG_URL);
+    const data=await res.json();
+    if(!data.ok||!data.catalog) throw new Error('Catálogo no disponible');
+
+    document.getElementById('spin-count').textContent=data.count;
+
+    const resultado=suggestPump(data.catalog, D.altura_total, D.litros_necesarios, D.diametro||'110-115mm');
+
+    if(!resultado){
+      // Sin resultado — armar WA y mostrar pantalla
+      armarWA(null);
+      show('noresult');
+      return;
+    }
+
+    // Mostrar resultado
+    mostrarBomba(resultado);
+    show('resultado');
+
+  }catch(err){
+    console.error(err);
+    armarWA(null);
+    show('noresult');
+  }
+}
+
+// ── MOSTRAR BOMBA ──
+function mostrarBomba({bomba, flow}){
+  document.getElementById('b-codigo').textContent=bomba.codigo;
+  document.getElementById('b-nombre').textContent=bomba.marca;
+  document.getElementById('b-specs').textContent=`${bomba.impulsor||'Centrífuga'} · ${bomba.watts}W · ${bomba.cant_paneles} panel${bomba.cant_paneles>1?'es':''} solar${bomba.cant_paneles>1?'es':''}`;
+  document.getElementById('b-precio').innerHTML=`$${Math.round(bomba.precio_full).toLocaleString('es-AR')}<span>Kit completo con paneles</span>`;
+  document.getElementById('b-checks').innerHTML=`
+    <div class="bomba-check">Entrega ${flow.litros_verano.toLocaleString('es-AR')} L/día a ${D.altura_total}m de altura</div>
+    <div class="bomba-check">Cubre los ${D.litros_necesarios.toLocaleString('es-AR')} L/día que necesitás</div>
+    <div class="bomba-check">Diámetro ${bomba.diam_bomba}" — compatible con tu perforación</div>
+    ${bomba.stock>0?'<div class="bomba-check">En stock — '+bomba.stock+' unidad'+(bomba.stock>1?'es disponibles':'')+'</div>':'<div class="bomba-check" style="opacity:.7">Consultar disponibilidad</div>'}
+  `;
+
+  // Botón WhatsApp con datos
+  armarWA(bomba);
+
+  // Botón ROI — solo si agua_hoy = Generador o Electricidad
+  const showROI=['Generador','Electricidad'].includes(D.agua_hoy);
+  const btnROI=document.getElementById('btn-roi');
+  if(showROI){
+    btnROI.classList.remove('hidden');
+    btnROI.href=`${ROI_URL}/?pump=${encodeURIComponent(bomba.codigo)}&liters=${D.litros_necesarios}&height=${D.altura_total}`;
+  } else {
+    btnROI.classList.add('hidden');
+  }
+}
+
+// ── ARMAR MENSAJE WA ──
+function armarWA(bomba){
+  const consumo=D.uso==='Ganado'?`${D.animales} animales (${D.litros_necesarios.toLocaleString('es-AR')} L/día)`:`${parseInt(D.litros).toLocaleString('es-AR')} L/día`;
+  const bombaTxt=bomba?`\n\n🔧 *Equipo sugerido:*\n• ${bomba.codigo} — ${bomba.marca}\n• $${Math.round(bomba.precio_full).toLocaleString('es-AR')} kit completo`:'';
+  const msg=[
+    `Hola! Completé la evaluación de bombeo solar en Febecos.`,
+    ``,
+    `📋 *Mis datos:*`,
+    `• Zona: ${D.zona}`,
+    `• Uso: ${D.uso} — ${consumo}`,
+    `• Agua hoy: ${D.agua_hoy}`,
+    `• Perforación: ${D.usar_perf} | Diámetro: ${D.diametro}`,
+    `• Profundidad: ${D.profundidad}m + ${D.altura_tanque}m tanque = ${D.altura_total}m total`,
+    `• Inversión: ${D.inversion}`,
+    `• Plazo: ${D.timing}`,
+    bombaTxt,
+    ``,
+    `¿Me pueden asesorar?`
+  ].join('\n');
+
+  const waUrl=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+  document.getElementById('btn-wa-resultado').href=waUrl;
+  const btnNR=document.getElementById('btn-wa-noresult');
+  if(btnNR) btnNR.href=waUrl;
 }
 
 // ── RESET ──
 function rst(){
   Object.keys(D).forEach(k=>delete D[k]);
   document.querySelectorAll('input[type=radio]').forEach(x=>x.checked=false);
-  document.querySelectorAll('select').forEach(s=>s.value='');
-  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.className='fi';});
+  document.querySelectorAll('input[type=number],input[type=text],input[type=tel],input[type=email]').forEach(i=>{
+    i.value=i.id==='altura_tanque'?'5':'';
+    i.className='fi';
+  });
   document.querySelectorAll('.field-msg').forEach(m=>{m.className='field-msg';m.textContent='';});
-  // tiene-wrap eliminado
   document.getElementById('alert-inv').classList.remove('on');
+  document.getElementById('anim-calc').style.display='none';
+  document.getElementById('altura-total').style.display='none';
   show(1);
 }
 
